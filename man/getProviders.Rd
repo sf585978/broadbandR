@@ -7,13 +7,13 @@
 getProviders(lat, lon, zip, time)
 }
 \arguments{
-\item{lat}{The latitude of the location of interest}
+\item{lat}{The latitude of the location of interest; optional if a zipcode is provided}
 
-\item{zip}{The zipcode of the location of interest; an optional parameter when coordinates are not known}
+\item{zip}{The zipcode of the location of interest as a character string; an optional parameter when coordinates are not known}
 
 \item{time}{The segment of data of interest; check the API documentation for options}
 
-\item{long}{The longitude of the location of interest}
+\item{long}{The longitude of the location of interest; optional if a zipcode is provided}
 }
 \value{
 A data frame of mobile broadband providers in a given location along with relevant technology performance metrics.
