@@ -19,6 +19,7 @@ library(broadbandR)
 
 ## Get Broadband Providers
 The FCC's National Broadband Map API allows you to collect data on the mobile broadband providers in a given location. You can pull these data in R if you know either the latitude/longitude coordinates or the zipcode of the location of interest and the time period of data you wish to pull from. The FCC currently provides access to the following periods:
+
 | Label  | Period |
 | ------------- | ------------- |
 | jun2011  | June, 2011  |
