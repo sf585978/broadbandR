@@ -29,3 +29,13 @@ The FCC's National Broadband Map API allows you to collect data on the mobile br
 | jun2013  | June, 2013  |
 | dec2013  | December, 2013  |
 | jun2014  | June, 2014  |
+
+To collect the providers in an area if you know the latitude and longitude, you can call:
+```r
+getProviders(lat = 39.958520, lon = -75.198857, time = "jun2014")
+```
+
+Instead, if you know the zipcode of the location, you can provide it directly:
+```r
+getProviders(zip = "19104", time = "jun2014")
+```
