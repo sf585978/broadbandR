@@ -6,6 +6,8 @@
 #' @param zip The zipcode of the location of interest as a character string; an optional parameter when coordinates are not known
 #' @param time The segment of data of interest; check the API documentation for options
 #' @return A data frame of mobile broadband providers in a given location along with relevant technology performance metrics.
+#' @import jsonlite
+#' @import tidyr
 #' @keywords mobile broadband, API
 #' @export
 #' @examples
