@@ -4,12 +4,14 @@
 \alias{getProviders}
 \title{A function to retrieve mobile broadband provider information}
 \usage{
-getProviders(lat, lon, zip, time)
+getProviders(lat, lon, zip, fips, time)
 }
 \arguments{
 \item{lat}{The latitude of the location of interest; optional if a zipcode is provided}
 
 \item{zip}{The zipcode of the location of interest as a character string; an optional parameter when coordinates are not known}
+
+\item{fips}{The fips code of the location of interest as a numeric string with no leading zeros; an optional parameter when coordinates are not known}
 
 \item{time}{The segment of data of interest; check the API documentation for options}
 
@@ -22,8 +24,9 @@ A data frame of mobile broadband providers in a given location along with releva
 A function for interfacing with the national broadband map API.
 }
 \examples{
-getProviders(39.958520, -75.198857, "jun2014")
-getProviders("19104", "jun2014")
+getProviders(lat = 39.958520, lon = -75.198857, time = "jun2014")
+getProviders(zip = "19104", time = "jun2014")
+getProviders(42101, time = "jun2014")
 }
 \keyword{API}
 \keyword{broadband,}
