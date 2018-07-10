@@ -11,7 +11,7 @@ getProviders(lat, lon, zip, fips, time)
 
 \item{zip}{The zipcode of the location of interest as a character string; an optional parameter when coordinates are not known}
 
-\item{fips}{The fips code of the location of interest as a numeric string with no leading zeros; an optional parameter when coordinates are not known}
+\item{fips}{The county-level fips code of the location of interest as a numeric string with no leading zeros; an optional parameter when coordinates are not known}
 
 \item{time}{The segment of data of interest; check the API documentation for options}
 
@@ -26,7 +26,7 @@ A function for interfacing with the national broadband map API.
 \examples{
 getProviders(lat = 39.958520, lon = -75.198857, time = "jun2014")
 getProviders(zip = "19104", time = "jun2014")
-getProviders(42101, time = "jun2014")
+getProviders(fips = 42101, time = "jun2014")
 }
 \keyword{API}
 \keyword{broadband,}

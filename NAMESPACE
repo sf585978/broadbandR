@@ -2,4 +2,5 @@
 
 export(getProviders)
 import(jsonlite)
+import(noncensus)
 import(tidyr)
