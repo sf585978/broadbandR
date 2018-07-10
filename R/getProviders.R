@@ -30,8 +30,8 @@ getProviders <- function(lat, lon, zip, fips, time) {
         error("You need to supply either the latitude and longitude, zipcode, or fips code.")
       }
       else {
-        lat <- zip_codes$latitude[which(zip_codes$fips == fips)]
-        lon <- zip_codes$longitude[which(zip_codes$fips == fips)]
+        lat <- mean(zip_codes$latitude[which(zip_codes$fips == fips)])
+        lon <- mean(zip_codes$longitude[which(zip_codes$fips == fips)])
       }
     } else {
       lat <- zip_codes$latitude[which(zip_codes$zip == zip)]
@@ -47,7 +47,7 @@ getProviders <- function(lat, lon, zip, fips, time) {
                "&maxResults=1000&format=json",
                sep = "")
   out <- fromJSON(url)
-  if (test$status == "OK") {
+  if (out$status == "OK") {
     out2 <- unnest(out$Results$wirelessServices)
     colnames(out2)[7:22] <- paste(colnames(out2)[7:22], time, sep = "_")
     cat("Providers pulled successfully.")
