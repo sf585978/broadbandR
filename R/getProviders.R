@@ -47,9 +47,11 @@ getProviders <- function(lat, lon, zip, fips, time) {
                "&maxResults=1000&format=json",
                sep = "")
   out <- fromJSON(url)
+  n1 <- ncol(out$Results$wirelessServices)
+  n2 <- (n1 - 1) + length(out$Results$wirelessServices$technologies[[1]])
   if (out$status == "OK") {
     out2 <- unnest(out$Results$wirelessServices)
-    colnames(out2)[7:22] <- paste(colnames(out2)[7:22], time, sep = "_")
+    colnames(out2)[n1:n2] <- paste(colnames(out2)[n1:n2], time, sep = "_")
     cat("Providers pulled successfully.")
     return(out2)
   } else {
