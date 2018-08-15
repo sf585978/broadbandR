@@ -1,5 +1,5 @@
 #' A function to retrieve mobile broadband provider information
-#' 
+#'
 #' A function for interfacing with the national broadband map API.
 #' @param lat The latitude of the location of interest; optional if a zipcode is provided
 #' @param long The longitude of the location of interest; optional if a zipcode is provided
@@ -21,6 +21,7 @@ getProviders <- function(lat, lon, zip, fips, time) {
   require(jsonlite)
   require(tidyr)
   require(noncensus)
+  zip_codes <- data("zip_codes")
   if(missing(time)) {
     error("You need to supply the time period of data you wish to consider.")
   }
