@@ -21,7 +21,7 @@ getProviders <- function(lat, lon, zip, fips, time) {
   require(jsonlite)
   require(tidyr)
   require(noncensus)
-  zip_codes <- data("zip_codes")
+  data("zip_codes")
   if(missing(time)) {
     error("You need to supply the time period of data you wish to consider.")
   }
