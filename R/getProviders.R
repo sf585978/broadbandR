@@ -52,7 +52,7 @@ getProviders <- function(lat, lon, zip, fips, time) {
   n2 <- (n1 - 1) + length(out$Results$wirelessServices$technologies[[1]])
   if (out$status == "OK") {
     if (out$message == "No results found") {
-      error("No results found.")
+      warning("No results found.")
     } else {
       out2 <- unnest(out$Results$wirelessServices)
       colnames(out2)[n1:n2] <- paste(colnames(out2)[n1:n2], time, sep = "_")
@@ -60,6 +60,6 @@ getProviders <- function(lat, lon, zip, fips, time) {
       return(out2)
     }
   } else {
-    error("Providers not pulled successfully.")
+    warning("Providers not pulled successfully.")
   }
 }
