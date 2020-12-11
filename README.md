@@ -1,5 +1,5 @@
 # broadbandR
-An R package for interfacing with the FCC's National Broadband Map API.
+An R package for interfacing with the FCC's National Broadband Map API. Now deprecated because of the [decommisioning of the FCC's National Broadband Map API](https://www.fcc.gov/news-events/blog/2018/12/07/decommissioning-national-broadband-map-and-its-apis).
 
 ## Installation
 To get the current version of the pacakge from GitHub:
